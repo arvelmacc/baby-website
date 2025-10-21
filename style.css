@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff0f5;
+  color: #4a4a4a;
+  text-align: center;
+}
+header {
+  background-color: #ffb6c1;
+  padding: 1rem;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+}
+.nav-links a {
+  color: white;
+  margin-left: 1rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-links a.active {
+  text-decoration: underline;
+}
+.container {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+.hero h1 {
+  color: #ff69b4;
+  font-size: 2rem;
+}
+.subtitle {
+  font-size: 1.1rem;
+  color: #666;
+}
+.love-letter {
+  background-color: #ffe4ec;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-top: 2rem;
+  line-height: 1.6;
+}
+.reasons-list {
+  text-align: left;
+  max-width: 700px;
+  margin: auto;
+  background-color: #ffeaf2;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 2rem;
+}
+.gallery img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+footer {
+  background-color: #ffb6c1;
+  color: white;
+  padding: 1rem;
+  margin-top: 3rem;
+}
+
+/* Hearts animation */
+@keyframes floatUp {
+  0% {transform: translateY(100vh) scale(0.6); opacity: 0;}
+  50% {opacity: 1;}
+  100% {transform: translateY(-10vh) scale(1); opacity: 0;}
+}
+.hearts-container {
+  position: fixed;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+.heart {
+  position: absolute;
+  bottom: -10vh;
+  width: 20px; height: 20px;
+  background: #ff8fb1;
+  opacity: 0.8;
+  transform: rotate(45deg);
+  animation: floatUp 10s linear infinite;
+}
+.heart::before,
+.heart::after {
+  content: '';
+  position: absolute;
+  width: 20px; height: 20px;
+  background: #ff8fb1;
+  border-radius: 50%;
+}
+.heart::before { top: -10px; left: 0; }
+.heart::after { left: -10px; top: 0; }
+
+#music-toggle {
+  position: fixed;
+  bottom: 15px; right: 15px;
+  background: #ffb6c1;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 10px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}

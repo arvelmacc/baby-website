@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>For Baby — Dom Briner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="logo">Baby ❤️</a>
+      <div class="nav-links">
+        <a href="reasons.html">100 Reasons</a>
+        <a href="gallery.html">Gallery</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>For My Baby — Dom Briner 💕</h1>
+      <p class="subtitle">A little place I made to remind you every day how loved you are.</p>
+    </section>
+
+    <section class="love-letter">
+      <h2>My Love Letter to You</h2>
+      <p>
+        My dearest Baby,<br><br>
+        Every day with you feels like sunshine through pink clouds. You make
+        the simplest moments feel special, the quiet nights feel warm, and the
+        hardest days feel lighter.<br><br>
+        You’ve shown me love in ways I never thought I deserved — through your
+        laughter, your kindness, and the way you see the world.<br><br>
+        This little website is my way of keeping a piece of that love here,
+        forever — so that even when we’re apart, you can feel how deeply I
+        adore you.<br><br>
+        I love you endlessly, Baby. 🩷
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with ❤️ by your love — Arvel</p>
+  </footer>
+
+  <div class="hearts-container" id="hearts"></div>
+  <script>
+    const hearts = document.getElementById('hearts');
+    for (let i = 0; i < 20; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = 6 + Math.random() * 4 + 's';
+      heart.style.animationDelay = Math.random() * 5 + 's';
+      hearts.appendChild(heart);
+    }
+  </script>
+
+  <audio id="bg-music" src="love.mp3" autoplay loop></audio>
+  <button id="music-toggle">🔈 Music Off</button>
+
+  <script>
+  const music = document.getElementById('bg-music');
+  const btn = document.getElementById('music-toggle');
+  btn.onclick = () => {
+    if (music.paused) { music.play(); btn.textContent = "🔈 Music Off"; }
+    else { music.pause(); btn.textContent = "🔇 Music On"; }
+  };
+  </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery — Baby</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="logo">Baby ❤️</a>
+      <div class="nav-links">
+        <a href="reasons.html">100 Reasons</a>
+        <a href="gallery.html" class="active">Gallery</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Our Gallery 📸</h1>
+    <div class="gallery">
+      <img src="images/photo1.jpg" alt="Baby photo 1" />
+      <img src="images/photo2.jpg" alt="Baby photo 2" />
+      <img src="images/photo3.jpg" alt="Baby photo 3" />
+      <img src="images/photo4.jpg" alt="Baby photo 4" />
+    </div>
+  </main>
+
+  <footer>
+    <p>Captured memories, eternal love 💕</p>
+  </footer>
+
+  <div class="hearts-container" id="hearts"></div>
+  <script>
+    const hearts = document.getElementById('hearts');
+    for (let i = 0; i < 15; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = 6 + Math.random() * 4 + 's';
+      heart.style.animationDelay = Math.random() * 5 + 's';
+      hearts.appendChild(heart);
+    }
+  </script>
+
+  <audio id="bg-music" src="love.mp3" autoplay loop></audio>
+  <button id="music-toggle">🔈 Music Off</button>
+
+  <script>
+  const music = document.getElementById('bg-music');
+  const btn = document.getElementById('music-toggle');
+  btn.onclick = () => {
+    if (music.paused) { music.play(); btn.textContent = "🔈 Music Off"; }
+    else { music.pause(); btn.textContent = "🔇 Music On"; }
+  };
+  </script>
+</body>
+</html>

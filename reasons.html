@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>100 Reasons Why I Love You — Baby</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="logo">Baby ❤️</a>
+      <div class="nav-links">
+        <a href="reasons.html" class="active">100 Reasons</a>
+        <a href="gallery.html">Gallery</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>100 Reasons Why I Love You 💘</h1>
+    <ol class="reasons-list">
+      <li>Your smile brightens up my entire day.</li>
+      <li>The way you say my name.</li>
+      <li>How you make me laugh even when I don’t want to.</li>
+      <li>Your warmth when we hug.</li>
+      <li>Your confidence and soft heart combo.</li>
+      <li>How you care for the people you love.</li>
+      <li>When you get clingy — it’s the cutest.</li>
+      <li>The sparkle in your eyes when you’re happy.</li>
+      <li>Your voice when you say “Baby.”</li>
+      <li>The way you listen, even to my nonsense.</li>
+    </ol>
+  </main>
+
+  <footer>
+    <p>Forever yours 💞</p>
+  </footer>
+
+  <div class="hearts-container" id="hearts"></div>
+  <script>
+    const hearts = document.getElementById('hearts');
+    for (let i = 0; i < 15; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = 6 + Math.random() * 4 + 's';
+      heart.style.animationDelay = Math.random() * 5 + 's';
+      hearts.appendChild(heart);
+    }
+  </script>
+
+  <audio id="bg-music" src="love.mp3" autoplay loop></audio>
+  <button id="music-toggle">🔈 Music Off</button>
+
+  <script>
+  const music = document.getElementById('bg-music');
+  const btn = document.getElementById('music-toggle');
+  btn.onclick = () => {
+    if (music.paused) { music.play(); btn.textContent = "🔈 Music Off"; }
+    else { music.pause(); btn.textContent = "🔇 Music On"; }
+  };
+  </script>
+</body>
+</html>
